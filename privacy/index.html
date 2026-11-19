@@ -27,7 +27,7 @@
   <main class="legal">
     <div class="wrap">
       <p class="meta">Last updated: November 19, 2026</p>
-      <p>This Privacy Policy explains what information Daiku processes, where it is kept and who receives it, including when you connect your YouTube or TikTok account. Daiku is a self-hosted application based on the open-source OpenShorts project. It runs on your own computer using Docker and is currently in development and testing.</p>
+      <p>This Privacy Policy explains what information Daiku processes, where it is kept and who receives it, including when you connect your YouTube, TikTok or X (Twitter) account. Daiku is a self-hosted application based on the open-source OpenShorts project. It runs on your own computer using Docker and is currently in development and testing.</p>
       <p>Daiku is a personal project, not a registered company.<br>
         <strong>Responsible party:</strong> Jaime (individual developer of Daiku)<br>
         <strong>Contact:</strong> <a href="mailto:daiku.support@gmail.com">daiku.support@gmail.com</a></p>
@@ -41,11 +41,12 @@
         <li><strong>Your approval records:</strong> for each video you approve for upload, the time of approval, your confirmation that you watched it, and the reuse-rights basis and any evidence note you type in.</li>
         <li><strong>Connected YouTube account:</strong> your channel ID and channel name, the permissions you granted, and the time you connected it. After an upload, Daiku also reads the uploaded video's ID, privacy setting and upload status to confirm the result.</li>
         <li><strong>Connected TikTok account:</strong> your TikTok account identifier (open_id) and display name, received with the <code>user.info.basic</code> permission, plus the permissions you granted and the time you connected it.</li>
+        <li><strong>Connected X account:</strong> the permissions you granted and the time you connected it. Daiku does not currently read your X profile, so it does not store your X user ID, username or any other profile information.</li>
         <li><strong>OAuth tokens:</strong> the access tokens and refresh tokens that let Daiku act on your behalf within the permissions you granted.</li>
         <li><strong>Publication results:</strong> the status history of each upload and, when it succeeds, the platform's video ID and link.</li>
         <li><strong>Clips Radar:</strong> public information about Twitch clips returned by the official Twitch API (such as the clip title and link, the channel name, the name of the person who created the clip, the language, the view count and the date), together with your own ratings, notes and rights status for each clip.</li>
       </ul>
-      <p>Daiku never asks for or stores your YouTube, Google or TikTok password. You sign in on each platform's own authorization page.</p>
+      <p>Daiku never asks for or stores your YouTube, Google, TikTok or X password. You sign in on each platform's own authorization page.</p>
 
       <h2>3. How Daiku uses this information</h2>
       <ul>
@@ -57,7 +58,7 @@
       </ul>
       <p>Daiku does not sell personal data, does not use it for advertising and does not share it with anyone other than the platforms and services described in section 5.</p>
 
-      <h2>4. YouTube and TikTok permissions</h2>
+      <h2>4. YouTube, TikTok and X permissions</h2>
       <p><strong>YouTube.</strong> Daiku uses Google's OAuth authorization and the YouTube Data API v3, with exactly these permissions:</p>
       <ul>
         <li><code>youtube.upload</code>: to upload the videos you approve;</li>
@@ -70,22 +71,38 @@
         <li><code>video.upload</code>: to send the videos you approve to your TikTok inbox as drafts. You finish and publish each draft yourself in the TikTok app.</li>
       </ul>
       <p><strong>Daiku does not publish directly to TikTok.</strong> Direct publishing is not available.</p>
-      <p>Once a video reaches YouTube or TikTok, it is also governed by that platform's policies: the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>, the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a> and the <a href="https://www.tiktok.com/legal/privacy-policy">TikTok Privacy Policy</a>.</p>
+      <p><strong>X (Twitter).</strong> Daiku uses X's OAuth 2.0 authorization (with PKCE) and the X API. Your X account can be connected, and it is used by default for clips in English. It requests these permissions:</p>
+      <ul>
+        <li><code>tweet.write</code>: to create a post with a video you approve;</li>
+        <li><code>tweet.read</code> and <code>users.read</code>: required by X to create posts. Daiku does not currently use them to read your profile, your timeline or anyone else's posts;</li>
+        <li><code>media.write</code>: to upload the video of a post you approve;</li>
+        <li><code>offline.access</code>: to keep the connection without asking you to authorize Daiku again.</li>
+      </ul>
+      <p><strong>Real posts to X are currently disabled.</strong> When they are enabled and you approve and start a post, Daiku will send X the video file and the post text you prepared (title, description and hashtags). Links in X posts are blocked by default.</p>
+      <p>The X API is billed per use to whoever registers the X developer application used by the installation, not to the people who view the posts. Daiku includes spending controls:</p>
+      <ul>
+        <li>the monthly budget is 0 by default, and nothing billable is sent without your explicit authorization;</li>
+        <li>the estimated cost is reserved before each request and shown to you before you publish;</li>
+        <li>an operation whose price is not confirmed is blocked;</li>
+        <li>a request whose outcome is unclear is never retried automatically.</li>
+      </ul>
+      <p>Once a video reaches YouTube, TikTok or X, it is also governed by that platform's policies: the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>, the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>, the <a href="https://www.tiktok.com/legal/privacy-policy">TikTok Privacy Policy</a> and the <a href="https://x.com/en/privacy">X Privacy Policy</a>.</p>
 
       <h2>5. Services Daiku communicates with</h2>
       <ul>
         <li><strong>Google and YouTube:</strong> authorization, video uploads and the reads described in section 4.</li>
         <li><strong>TikTok:</strong> authorization, your basic account information, and videos sent to your inbox as drafts.</li>
+        <li><strong>X (Twitter):</strong> authorization and, once real posts are enabled and only for posts you approve, the video upload and the creation of the post (section 4). Daiku does not currently read your X profile or timeline.</li>
         <li><strong>Twitch (Clips Radar):</strong> Daiku uses the official Twitch API with an application-level authorization, without signing in to your Twitch account. It sends the search you make (a channel name or a game, and a time period) and receives public clip information. Clips are not downloaded. When you watch a clip, Twitch's official player and thumbnails load in your browser, so Twitch receives your browser's request (including your IP address), as described in the <a href="https://www.twitch.tv/p/legal/privacy-notice/">Twitch Privacy Notice</a>.</li>
         <li><strong>ngrok (only while connecting TikTok):</strong> TikTok requires an HTTPS address to return to after you authorize Daiku. Daiku uses a temporary ngrok tunnel only while you connect your TikTok account. The tunnel forwards only that single authorization response, which contains a one-time authorization code, to a minimal service on your computer that accepts nothing else. Request inspection is turned off, and the tunnel is closed afterwards. See the <a href="https://ngrok.com/privacy">ngrok Privacy Policy</a>.</li>
         <li><strong>Artificial intelligence:</strong> speech transcription and the selection of clip moments run on your own computer, using local models. Daiku does not send your videos or transcripts to an AI company. The first time it is needed, the speech-recognition model is downloaded from Hugging Face; no personal data is sent.</li>
         <li><strong>Video sites you choose:</strong> if you ask Daiku to process a video from a web address, Daiku downloads it from that site.</li>
-        <li><strong>Optional services not in use:</strong> the open-source code Daiku is based on can also use other services (for example Google Gemini, ElevenLabs, fal.ai or Upload-Post), and Daiku includes an X (Twitter) integration. None of them is configured or enabled. They would only be used if you entered your own key for them, and Upload-Post publishing is additionally blocked in Daiku.</li>
+        <li><strong>Optional services not in use:</strong> the open-source code Daiku is based on can also use other services (for example Google Gemini, ElevenLabs, fal.ai or Upload-Post). None of them is configured or enabled. They would only be used if you entered your own key for them, and Upload-Post publishing is additionally blocked in Daiku.</li>
       </ul>
 
       <h2>6. Storage and security of OAuth tokens</h2>
       <p>Your connected accounts and their OAuth tokens are stored only on your computer, in a file inside your Daiku installation that only its owner can read. Before they are written to disk, the tokens are encrypted with Fernet (AES-128 in CBC mode with HMAC-SHA256 authentication). The encryption key is kept in your installation's private server configuration, which is never shown in the dashboard, served over the network or included in the project's source code.</p>
-      <p>Tokens are only sent to Google or TikTok to make the requests you start. They never appear in the dashboard, in server logs or in any response, and one-time authorization codes are removed from the server logs. Because the key and the encrypted tokens are both on your computer, this protects against copies of the data leaking, but you remain responsible for the security of your computer.</p>
+      <p>Tokens are only sent to Google, TikTok or X to make the requests you start. They never appear in the dashboard, in server logs or in any response, and one-time authorization codes are removed from the server logs. Because the key and the encrypted tokens are both on your computer, this protects against copies of the data leaking, but you remain responsible for the security of your computer.</p>
 
       <h2>7. Retention and deletion</h2>
       <ul>
@@ -96,15 +113,15 @@
         <li><strong>Publication queue and history</strong> (texts, approval records, upload status, platform IDs and links) and <strong>copies of videos added for publishing:</strong> kept on your computer until you delete them. They are not deleted automatically.</li>
         <li><strong>Clips Radar data:</strong> kept on your computer until you delete it; only the last 50 searches are kept in the search history.</li>
       </ul>
-      <p>Videos you upload to YouTube or TikTok stay on those platforms until you delete them there. Daiku does not delete videos from the platforms.</p>
+      <p>Videos and posts you upload to YouTube, TikTok or X stay on those platforms until you delete them there. Daiku does not delete videos or posts from the platforms.</p>
 
       <h2>8. Disconnecting your accounts</h2>
       <p>In Daiku, open <em>Publicaciones</em> and press <strong>Desconectar</strong> (Disconnect) next to the account. Daiku then:</p>
       <ul>
-        <li>asks the platform to revoke the access it granted (if the platform cannot be reached, the local deletion still happens);</li>
+        <li>asks the platform to revoke the access it granted; for X it revokes both the access token and the refresh token. If the platform cannot be reached, the local deletion still happens;</li>
         <li>deletes the account record and its encrypted tokens from your computer.</li>
       </ul>
-      <p>Disconnecting does not delete the publication history, the copies of videos added for publishing, or videos already on the platform. You can also revoke Daiku's access at any time from the platform: in your <a href="https://myaccount.google.com/permissions">Google Account permissions</a>, or in your TikTok account settings, in the section that lists the apps and services with access to your account. After access is revoked, Daiku can no longer act on your behalf.</p>
+      <p>Disconnecting does not delete the publication history, the copies of videos added for publishing, or videos already on the platform. You can also revoke Daiku's access at any time from the platform: in your <a href="https://myaccount.google.com/permissions">Google Account permissions</a>, in your TikTok account settings, in the section that lists the apps and services with access to your account, or in your X account settings, in the list of connected apps. After access is revoked, Daiku can no longer act on your behalf.</p>
 
       <h2>9. Cookies and analytics</h2>
       <p><strong>This website</strong> is a static site hosted on GitHub Pages. It does not set its own cookies and does not use analytics. GitHub may process technical data, such as IP addresses, when serving it, as described in the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>.</p>
@@ -114,7 +131,7 @@
       <p>Depending on where you live, including under the EU General Data Protection Regulation (GDPR), you may have the right to access, correct or delete your personal data, to restrict or object to its processing, to data portability, and to withdraw your consent at any time. Because Daiku stores data on your own computer, you can exercise most of these rights directly, by deleting content, disconnecting your accounts or revoking access on the platforms. For any other request, contact <a href="mailto:daiku.support@gmail.com">daiku.support@gmail.com</a>. You also have the right to lodge a complaint with a data protection authority (in Spain, the Agencia Española de Protección de Datos, <a href="https://www.aepd.es">aepd.es</a>).</p>
 
       <h2>11. Children</h2>
-      <p>Daiku is not intended for children. To connect a YouTube or TikTok account you must meet the minimum age required by that platform.</p>
+      <p>Daiku is not intended for children. To connect a YouTube, TikTok or X account you must meet the minimum age required by that platform.</p>
 
       <h2>12. Changes to this policy</h2>
       <p>This policy may be updated as Daiku develops. Changes will be published on this page with a new "Last updated" date.</p>
