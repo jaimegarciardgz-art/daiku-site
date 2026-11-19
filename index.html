@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daiku – Create, organize and manage short-form video content</title>
+  <meta name="description" content="Daiku is a self-hosted application that runs on your own computer to review video clips, prepare short-form videos and send them to YouTube and TikTok only when you decide.">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./"><span class="brand-mark" aria-hidden="true"></span>Daiku</a>
+      <nav class="nav" aria-label="Main">
+        <a href="./" aria-current="page">Home</a>
+        <a href="terms/">Terms of Service</a>
+        <a href="privacy/">Privacy Policy</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <h1>Daiku</h1>
+      <p>Create, organize and manage short-form video content.</p>
+      <span class="badge">In development</span>
+    </div>
+  </section>
+
+  <main>
+    <div class="wrap">
+      <section class="section">
+        <h2>What is Daiku?</h2>
+        <p class="lead">Daiku is a self-hosted application that runs on your own computer using Docker. It helps you review video clips, prepare short-form vertical videos and, only when you decide, send them to your own YouTube and TikTok accounts. Daiku is based on the open-source <a href="https://github.com/mutonby/openshorts">OpenShorts</a> project (MIT License).</p>
+        <p>Daiku is not an online service: there is no Daiku account to sign up for, and your videos, settings and connected accounts stay on your computer.</p>
+      </section>
+
+      <section class="section">
+        <h2>Features</h2>
+        <div class="grid">
+          <div class="card"><h3>Clip preparation</h3><p>Turn long videos into short vertical clips with subtitles, processed locally on your computer.</p></div>
+          <div class="card"><h3>Review before anything is sent</h3><p>Every video must be reviewed and approved individually, including confirming that you have the rights to reuse it.</p></div>
+          <div class="card"><h3>Clips Radar</h3><p>Find recent public Twitch clips through the official Twitch API and watch them with Twitch's own player. Daiku does not download them.</p></div>
+          <div class="card"><h3>YouTube uploads</h3><p>Connect your channel through Google's official authorization (OAuth) and upload approved videos with the YouTube Data API. Uploads are private by default.</p></div>
+          <div class="card"><h3>TikTok drafts</h3><p>Connect a TikTok account with TikTok Login Kit and send approved videos to your TikTok inbox as drafts. You finish and publish each draft yourself in the TikTok app. <em>In development.</em></p></div>
+          <div class="card"><h3>You stay in control</h3><p>Nothing is sent until you start or schedule it. You can disconnect an account in Daiku, or revoke its access on the platform, at any time.</p></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Project status</h2>
+        <div class="notice">Daiku is in development and testing. Uploads to YouTube are working and private by default. The TikTok integration only sends videos to your TikTok inbox as drafts; <strong>direct publishing to TikTok is not available</strong>. Features may change as development continues.</div>
+      </section>
+
+      <section class="section">
+        <h2>Contact</h2>
+        <p>Daiku is a personal project by Jaime, not a registered company. For questions or support, write to <a href="mailto:daiku.support@gmail.com">daiku.support@gmail.com</a>.</p>
+        <p>Please read the <a href="terms/">Terms of Service</a> and the <a href="privacy/">Privacy Policy</a>.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© 2026 Daiku</span>
+      <nav class="footer-links" aria-label="Legal">
+        <a href="terms/">Terms of Service</a>
+        <a href="privacy/">Privacy Policy</a>
+        <a href="mailto:daiku.support@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
